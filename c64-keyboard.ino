@@ -1,3 +1,10 @@
+/*
+ * This is to test the connection to the C64 keyboard.  It uses a standard 
+ * arduino Uno board.  There is no USB connection here, just a way to ensure
+ * That the keypad is reading the correct key based on the keypress and keyboard matrix
+ * 
+ */
+
 #include <Key.h>
 #include <Keypad.h>
 
