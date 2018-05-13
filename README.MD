@@ -17,3 +17,6 @@ https://www.waitingforfriday.com/?p=470
 http://symlink.dk/projects/c64key/
 
 https://www.waitingforfriday.com/?p=470
+
+HID Usage Tables
+http://www.usb.org/developers/hidpage/Hut1_12v2.pdf

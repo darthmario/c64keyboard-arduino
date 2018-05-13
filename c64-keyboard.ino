@@ -7,19 +7,20 @@
 
 #include <Key.h>
 #include <Keypad.h>
+#include "keyboard_definitions.h"
 
 const byte ROWS = 8;
 const byte COLS = 8;
 
 char hexaKeys[ROWS][COLS] = {
-  {'1', '<', 'C', 'S', ' ', 'H', 'q', '2'},
-  {'3', 'w', 'a', '[', 'z', 's', 'e', '4'},
-  {'5', 'r', 'd', 'x', 'c', 'f', 't', '6'},
-  {'7', 'y', 'g', 'v', 'b', 'h', 'u', '8'},
-  {'9', 'i', 'j', 'n', 'm', 'k', 'o', '0'},
-  {'+', 'p', 'l', '\'', '.', ':', '@', '-'},
-  {'$', '*', ';', '/', ']', '=', '^', 'H'},
-  {'D', 'R', '{', '}', '!', '#', '%', '&'}
+  {KEY_1, '<', 'C', 'S', ' ', 'H', KEY_Q, KEY_2},
+  {KEY_3, KEY_W, KEY_A, KEY_LEFT_SHIFT, KEY_Z, KEY_S, KEY_E, KEY_4},
+  {KEY_5, KEY_R, KEY_D, KEY_X, KEY_C, KEY_F, KEY_T, KEY_6},
+  {KEY_7, KEY_Y, KEY_G, KEY_V, KEY_B, KEY_H, KEY_U, KEY_8},
+  {KEY_9, KEY_I, KEY_J, KEY_N, KEY_M, KEY_K, KEY_O, KEY_0},
+  {'+', KEY_P, KEY_L, '\'', '.', ':', '@', '-'},
+  {'$', '*', ';', '/', KEY_RIGHT_SHIFT, '=', '^', 'H'},
+  {'D', 'R', '{', '}', KEY_F1, KEY_F3, KEY_F5, KEY_F7}
 };
 
 byte rowPins[ROWS] = {0, 4, 5, 6, 7, 8, 9, 10};
@@ -33,7 +34,7 @@ void setup() {
 }
 
 void loop() {
-  char customKey = customKeypad.getKey();
+  byte customKey = customKeypad.getKey();
 
   if (customKey) {
     Serial.print(customKey);
