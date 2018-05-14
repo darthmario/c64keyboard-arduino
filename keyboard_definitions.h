@@ -37,6 +37,7 @@
 #define KEY_8 37
 #define KEY_9 38
 #define KEY_0 39
+#define KEY_SPACEBAR  44
 // Function Keys
 #define KEY_F1 112
 #define KEY_F3 114
@@ -50,4 +51,8 @@
 // Shift Keys
 #define KEY_LEFT_SHIFT  225
 #define KEY_RIGHT_SHIFT  229
+
+//specia Characters On C64 Keyboard that don't align with PC keys
+#define KEY_ATMARK  206
+#define KEY_STAR  85
 
