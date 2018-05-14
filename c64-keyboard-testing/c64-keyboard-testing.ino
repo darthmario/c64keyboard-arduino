@@ -12,6 +12,8 @@
 const byte ROWS = 8;
 const byte COLS = 8;
 
+H=Commodore Key
+
 char hexaKeys[ROWS][COLS] = {
   {KEY_1, '<', 'C', 'S', KEY_SPACEBAR, 'H', KEY_Q, KEY_2},
   {KEY_3, KEY_W, KEY_A, KEY_LEFT_SHIFT, KEY_Z, KEY_S, KEY_E, KEY_4},
@@ -30,7 +32,7 @@ Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS)
 
 void setup() {
   // put your setup code here, to run once:
-  //Serial.begin(2000000);
+  Serial.begin(2000000);
 }
 
 // we should probably rework this to be able to handle multiple keys and possibly events for 
@@ -38,10 +40,10 @@ void setup() {
 // use of a normal pc.
 
 void loop() {
-  byte customKey = customKeypad.getKey();
+  char customKey = customKeypad.getKey();
 
   if (customKey) {
+    Serial.println(customKey);
     //Serial.write(customKey);
-    Serial.print(customKey);
   }
 }

@@ -39,15 +39,15 @@
 #define KEY_0 39
 #define KEY_SPACEBAR  44
 // Function Keys
-#define KEY_F1 112
-#define KEY_F3 114
-#define KEY_F5 116
-#define KEY_F7 118
+#define KEY_F1 58
+#define KEY_F3 60
+#define KEY_F5 62
+#define KEY_F7 64
 // @TODO Need modifiers to be visible
-#define KEY_F2 113
-#define KEY_F4 115
-#define KEY_F6 117
-#define KEY_F8 119
+#define KEY_F2 59
+#define KEY_F4 61
+#define KEY_F6 63
+#define KEY_F8 65
 // Shift Keys
 #define KEY_LEFT_SHIFT  225
 #define KEY_RIGHT_SHIFT  229
