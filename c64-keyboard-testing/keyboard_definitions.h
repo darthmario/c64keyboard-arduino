@@ -44,6 +44,9 @@
 #define KEY_FORWARD_SLASH 56
 #define KEY_EQUALS  103
 #define KEY_LEFTCONTROL  224
+#define KEY_RETURN  40
+#define KEY_DELETE  42
+#define KEY_HOME  74
 
 // Function Keys
 #define KEY_F1 58
@@ -66,6 +69,7 @@
 #define KEY_COLON  203 // Maps to keypad :
 #define KEY_EQUALS  103 // Maps to keypad =
 #define KEY_PLUS  87 // Maps to keypad +
+#define KEY_MINUS 86 // Maps to keypad -
 
 //Characters that will need to be modified to print the same keys
 
