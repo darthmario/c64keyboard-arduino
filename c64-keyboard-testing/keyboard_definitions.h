@@ -38,6 +38,13 @@
 #define KEY_9 38
 #define KEY_0 39
 #define KEY_SPACEBAR  44
+#define KEY_COMMA 54
+#define KEY_PERIOD 55
+#define KEY_SEMICOLON 51
+#define KEY_FORWARD_SLASH 56
+#define KEY_EQUALS  103
+#define KEY_LEFTCONTROL  224
+
 // Function Keys
 #define KEY_F1 58
 #define KEY_F3 60
@@ -53,6 +60,15 @@
 #define KEY_RIGHT_SHIFT  229
 
 //specia Characters On C64 Keyboard that don't align with PC keys
-#define KEY_ATMARK  206
-#define KEY_STAR  85
+#define KEY_ATMARK  206 // maps to keypad @
+#define KEY_STAR  85 // Maps to keypad *
+#define KEY_COMMODORE 227 // Maps to left GUI key
+#define KEY_COLON  203 // Maps to keypad :
+#define KEY_EQUALS  103 // Maps to keypad =
+#define KEY_PLUS  87 // Maps to keypad +
+
+//Characters that will need to be modified to print the same keys
+
+
+//Characters that need to be assigned ot special keycombos to do important PC things.
 
