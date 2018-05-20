@@ -11,6 +11,11 @@
 
 #include <HID-Project.h>
 #include <HID-Settings.h>
+const byte numChars = 32;
+char receivedChars[numChars];   // an array to store the received data
+
+boolean newData = false;
+
 
 void setup() {
   // Start the Serial1 which is connected with the IO MCU.
@@ -26,9 +31,52 @@ void setup() {
 }
 
 void loop() {
-  // Check if any Serial data from the IO MCU was received
-  byte c = Serial1.read();
-
-  // If you really wish to press a RAW keycode without the name use this:
-  //Keyboard.write(KeyboardKeycode(40));
+  // based on http://forum.arduino.cc/index.php?topic=396450.0
+  recvWithEndMarker();
+  showNewData();
 }
+
+void recvWithEndMarker() {
+  static byte ndx = 0;
+  char endMarker = '\n';
+  char rc;
+
+  while (Serial1.available() > 0 && newData == false) {
+    rc = Serial1.read();
+    if (rc != endMarker) {
+      receivedChars[ndx] = rc;
+      ndx++;
+      if (ndx >= numChars) {
+        ndx = numChars - 1;
+      }
+    }
+    else {
+      receivedChars[ndx] = '\0'; // terminate the string
+      ndx = 0;
+      newData = true;
+    }
+  }
+}
+
+void showNewData() {
+  if (newData == true) {
+    Serial.print("This just in ... ");
+    Serial.println(receivedChars);
+    char *receivedCharsPtr = receivedChars + 1;
+    byte *recievedKeycode = receivedCharsPtr +0;
+    Keyboard.write(KeyboardKeycode(40));
+    Serial.println(receivedCharsPtr);
+    if (receivedChars[0] == 1) {
+      char *receivedCharsPtr = receivedChars + 1;
+      Serial.println("keypress");
+      // keypress
+    }
+    if (receivedChars[0] == 3){
+      Serial.println("release");
+      // key release
+    }
+    newData = false;
+  }
+}
+
+
