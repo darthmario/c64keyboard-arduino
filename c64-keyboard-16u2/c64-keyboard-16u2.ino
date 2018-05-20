@@ -60,20 +60,16 @@ void recvWithEndMarker() {
 
 void showNewData() {
   if (newData == true) {
-    Serial.print("This just in ... ");
-    Serial.println(receivedChars);
+
+    char keyKind = receivedChars[0];
     char *receivedCharsPtr = receivedChars + 1;
-    byte *recievedKeycode = receivedCharsPtr +0;
-    Keyboard.write(KeyboardKeycode(40));
-    Serial.println(receivedCharsPtr);
-    if (receivedChars[0] == 1) {
-      char *receivedCharsPtr = receivedChars + 1;
-      Serial.println("keypress");
-      // keypress
+    int recievedKeycode = atoi(receivedCharsPtr);
+    //Keyboard.write(KeyboardKeycode(recievedKeycode));
+    if ( keyKind == '1' ) {
+      Keyboard.press(KeyboardKeycode(recievedKeycode));
     }
-    if (receivedChars[0] == 3){
-      Serial.println("release");
-      // key release
+    if (keyKind == '3') {
+      Keyboard.release(KeyboardKeycode(recievedKeycode));
     }
     newData = false;
   }
