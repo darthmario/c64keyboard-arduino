@@ -1,0 +1,8 @@
+{
+    "board@HoodLoader2": "HoodLoader2 16u2", 
+    "option_Board / Bootloader / USB-Core@HoodLoader2 16u2": "HoodLoader2 Uno", 
+    "package": "HoodLoader2", 
+    "platform": "HoodLoader2", 
+    "programmer": "AVR ISP", 
+    "version": "2.0.5"
+}
