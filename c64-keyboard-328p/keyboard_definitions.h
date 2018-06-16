@@ -46,10 +46,8 @@
 #define KEY_LEFTCONTROL  224
 #define KEY_RETURN  40
 #define KEY_DELETE  42
-#define KEY_HOME  74
-#define KEY_EXECUTE 74
-#define KEY_LEFT  80
-#define KEY_UP  82
+#define KEY_RIGHT_LEFT  79
+#define KEY_DOWN_UP  81
 
 // Function Keys
 #define KEY_F1 58
@@ -61,8 +59,8 @@
 #define KEY_F4 61
 #define KEY_F6 63
 #define KEY_F8 65
-#define KEY_RIGHT 79
-#define KEY_DOWN  81
+#define KEY_RIGHT 80
+#define KEY_DOWN  82
 // Shift Keys
 #define KEY_LEFT_SHIFT  225
 #define KEY_RIGHT_SHIFT  229
@@ -71,18 +69,14 @@
 #define KEY_LEFT_ARROW 53 // mapped to accent and tilde
 #define KEY_UP_ARROW 41 // mapped to escape for now
 
-
 //specia Characters On C64 Keyboard that don't align with PC keys
-#define KEY_ATMARK  206 // maps to keypad @
+#define KEY_ATMARK  226 // maps to alt
 #define KEY_STAR  85 // Maps to keypad *
 #define KEY_COMMODORE 227 // Maps to left GUI key
 #define KEY_COLON  203 // Maps to keypad :
 #define KEY_EQUALS  103 // Maps to keypad =
 #define KEY_PLUS  87 // Maps to keypad +
 #define KEY_MINUS 86 // Maps to keypad -
-
-//Characters that will need to be modified to print the same keys
-
-
-//Characters that need to be assigned ot special keycombos to do important PC things.
-
+#define KEY_POUND 49 // Maps to \ //
+#define KEY_EXECUTE 43 // Mapping to tab
+#define KEY_HOME 74 // Mapping to home

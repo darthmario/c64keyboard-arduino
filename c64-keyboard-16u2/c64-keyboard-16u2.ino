@@ -12,15 +12,14 @@
 #include <HID-Project.h>
 #include <HID-Settings.h>
 const byte numChars = 32;
-char receivedChars[numChars];   // an array to store the received data
+// an array to store the received data
+char receivedChars[numChars];   
 
 boolean newData = false;
 
 
 void setup() {
   // Start the Serial1 which is connected with the IO MCU.
-  // Make sure both baud rates are the same
-  // you can go up to 2000000 for very fast data transmission.
   Serial1.begin(115200);
 
   // Sends a clean report to the host. This is important on any Arduino type.
@@ -64,7 +63,7 @@ void showNewData() {
     char keyKind = receivedChars[0];
     char *receivedCharsPtr = receivedChars + 1;
     int recievedKeycode = atoi(receivedCharsPtr);
-    //Keyboard.write(KeyboardKeycode(recievedKeycode));
+    Serial.write(receivedCharsPtr);
     if ( keyKind == '1' ) {
       Keyboard.press(KeyboardKeycode(recievedKeycode));
     }
